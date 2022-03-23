@@ -3,21 +3,42 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
+   
 <mapper namespace="com.junefw.infra.modules.code.CodeMpp">
+
 
     <resultMap id="resultMapObj" type="com.junefw.infra.modules.code.Code"></resultMap>
 
-	<select id="selectList" resultMap="resultMapObj">
+		<sql id="selectComon">
+		FROM 
+		infrCodeGroup1 a
+		WHERE 1=1
+		<choose>
+         <when test="shIfcgDelNy == 1">AND ifcgDelNy = 1</when>
+         <when test="shIfcgDelNy == 0">AND ifcgDelNy = 0</when>
+      	</choose>
+      	<if test="shIfcgName != null and !shIfcgName.equals('')">AND ifcgName LIKE concat('%',#{shIfcgName},'%')</if>
+		<choose>
+         <when test="shOption == 1">AND a.ifcgName LIKE concat('%',#{shValue},'%')</when>
+         <when test="shOption == 0">AND a.ifcgNameEng LIKE concat('%',#{shValue},'%')</when>
+      	</choose>
+
+
+	</sql>
+	<select id="selectOneCount" resultType="Integer">
 			SELECT 
+				count(*)
+			<include refid="selectComon" />
+	</select>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT
 			a.ifcgSeq
 			, a.ifcgName
+			, a.ifcgNameEng
 			, a.ifcgDelNy
-		FROM 
-		nct.infrCodeGroup1 a
-		WHERE 1=1
-		AND ifcgDelNy = 0
-
+			<include refid="selectComon" />
+		
 	</select>
 	
 	<insert id="insert">
@@ -37,10 +58,66 @@
 			, a.ifcgName
 			, a.ifcgDelNy
 		FROM 
-		nct.infrCodeGroup1 a
+		infrCodeGroup1 a
 		WHERE 1=1
 		AND ifcgSeq = #{ifcgSeq}
+		
+	</select>
+		
+		
+	<update id ="update">
+		UPDATE infrCodeGroup1 SET
+			ifcgName = #{ifcgName}
+			WHERE 1=1
+				AND ifcgSeq = #{ifcgSeq}
+		</update>
+		
+	
+
+	<select id="selectListCode" resultMap="resultMapObj">
+			SELECT 
+			a.ifcdSeq
+			, a.ifcdName
+			, a.ifcdDelNy
+		FROM 
+		infCode a
+		WHERE 1=1
+		AND ifcdDelNy = 0
+		
+		<if test="shIfcgSeq != null and !shIfcgSeq.equals('')">AND ifcgSeq = #{shIfcgName}</if>
 
 	</select>
+	
+	<insert id="insertCode">
+			INSERT INTO infCode (
+			ifcdName
+			,ifcdDelNy
+			,ifcgSeq
+			) values (
+				#{ifcdName}
+				,0
+				,#{ifcgSeq}
+			)
+			
+	</insert>
+	
+	<select id="selectOneCode" resultMap="resultMapObj">
+			SELECT 
+			a.ifcdSeq
+			, a.ifcdName
+			, a.ifcdDelNy
+		FROM 
+			infCode a
+		WHERE 1=1
+			AND ifcdSeq = #{ifcdSeq}
+
+	</select>
+	
+	<update id ="updateCode">
+		UPDATE infCode SET
+			ifcdName = #{ifcdName}
+			WHERE 1=1
+				AND ifcdSeq = #{ifcdSeq}
+		</update>
 	
 </mapper>

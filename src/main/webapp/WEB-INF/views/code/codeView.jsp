@@ -5,12 +5,12 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
-<c:out value="${rt.ifcgSeq}"/> | <c:out value="${rt.ifcgName}"/> | <c:out value="${rt.ifcgDelNy}"/>
+<c:out value="${rt.ifcdSeq}"/> | <c:out value="${rt.ifcdName}"/> | <c:out value="${rt.ifcdDelNy}"/>
 
-<a href="/infra/code/codeGroup1Form?ifcgSeq=<c:out value="${rt.ifcgName}"/>">수정</a>
+<a href="/infra/code/codeForm?ifcgSeq=<c:out value="${rt.ifcdName}"/>">수정</a>
 
-<form method="post" action="codeGroup1Updt">
-	<input type="text" name="ifcgSeq" value="${rt.ifcgSeq}" style="visibility:hidden;">
-	<input type="text" name="ifcgChangeName" placeholder="바꿀NAME">
+<form method="post" action="codeUpdt">
+	<input type="text" name="ifcdSeq" value="${rt.ifcdSeq}" style="visibility:hidden;">
+	<input type="text" name="ifcdName" placeholder="바꿀NAME">
 	<input type="submit" value="제출">
 </form>

@@ -6,7 +6,8 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
 
-<form method="post" action="/infra/code/codeGroup1Inst">
-	<input type="text" name="ifcgName" placeholder="아이디"  value="<c:out value="${rt.ifcgName}"/>">
+<form method="post" action="/infra/code/codeGroup1Updt">
+	<input type="hidden" name="ifcgSeq" value=<c:out value="${rt.ifcgSeq}"/>> <!-- 아이디 입력후 제출하겠다.-->
+	<input type="text" name="ifcgName" placeholder="아이디" value=<c:out value="${rt.ifcgName}"/>> <!-- 아이디 입력후 제출하겠다.-->
 	<input type="submit" value="제출">
 </form>

@@ -3,9 +3,41 @@ package com.junefw.infra.modules.code;
 public class Code {
 	
 	private String ifcgSeq;
+	
+	public String getIfcgNameEng() {
+		return ifcgNameEng;
+	}
+	public void setIfcgNameEng(String ifcgNameEng) {
+		this.ifcgNameEng = ifcgNameEng;
+	}
 	private String ifcgName;
+	private String ifcgNameEng;
 	private String ifcgDelNy;
 	
+	private String ifcdSeq;
+	private String ifcdName;
+	private String ifcdDelNy;
+	
+	
+	
+	public String getIfcdSeq() {
+		return ifcdSeq;
+	}
+	public void setIfcdSeq(String ifcdSeq) {
+		this.ifcdSeq = ifcdSeq;
+	}
+	public String getIfcdName() {
+		return ifcdName;
+	}
+	public void setIfcdName(String ifcdName) {
+		this.ifcdName = ifcdName;
+	}
+	public String getIfcdDelNy() {
+		return ifcdDelNy;
+	}
+	public void setIfcdDelNy(String ifcdDelNy) {
+		this.ifcdDelNy = ifcdDelNy;
+	}
 	public String getIfcgSeq() {
 		return ifcgSeq;
 	}

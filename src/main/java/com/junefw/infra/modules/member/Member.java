@@ -7,6 +7,7 @@ public class Member {
 	private String ifmmName;
 	private Integer ifmmDelNy;
 //------------
+	
 	public String getIfmmSeq() {
 		return ifmmSeq;
 	}
