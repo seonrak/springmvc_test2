@@ -16,6 +16,7 @@ public class CodeVo {
 	
 	private String rowNumToShow;
 	private String startRnumForMysql;
+	
 	public String getIfcdSeq() {
 		return ifcdSeq;
 	}

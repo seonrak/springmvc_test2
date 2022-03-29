@@ -149,7 +149,7 @@
                                             <tr>
                                                 <td scope="col"><input type="checkbox"></td>
                                                 <td scope="col"><c:out value="${item.ifmmSeq}"/></td>
-                                                <td scope="col"><a href="/infra/xdmin/durian/durianView?ifmmSeq=${item.ifmmSeq}"><c:out value="${item.ifmmName}"/></a></td>
+                                                <td scope="col"><a href="/infra/durian/durianView?ifmmSeq=${item.ifmmSeq}"><c:out value="${item.ifmmName}"/></a></td>                                      
                                                 <td scope="col"><c:out value="${item.ifmmId}"/></td>
                                                 <td scope="col">등급</td>
                                                 <td scope="col">상태</td>
@@ -176,7 +176,7 @@
 	<div class="d-grid gop -2 d-md-flex justify-content-md-end">
 		<a href=""><button class="btn btn-secondary btn-sm" type="button">
 				<img src="../../../image/excel.svg">
-			</button></a> <a href=""><button class="btn btn-primary btn-sm" type="button">
+			</button></a> <a href="/infra/durian/durianForm"><button class="btn btn-primary btn-sm" type="button">
 				<img src="../../../image/plus.svg">
 			</button></a> <a><button type="button" class="btn btn-danger btn-sm"
 				data-bs-toggle="modal" data-bs-target="#exampleModal">
