@@ -52,7 +52,8 @@
 <div class="container-fluid">
 <div class = "row">
 <div class ="gy-3 col-md-6">
-<label for = "id" class="form-label">아이디</label><input type="text" class="form-control" id="id" maxlength="20" minlength="4" value="six_find"></div>
+<label for = "id" class="form-label">아이디</label><input type="text" class="form-control" id="id" maxlength="20" minlength="4"
+ value="six_find"></div>
  	</div>
  </div>
  <div class = "container-fluid">
@@ -127,12 +128,6 @@
 			<option>영국
 			</select>
   		</div>
-  		<div class = "col-12 col-md-6">
-  	<label for ="mobile" class = "form-label">성별</label>
-  	<br>
-  	<input type="checkbox" id="" name="mobile" value="man">남
-  	<input type="checkbox" id="" name="people" value="woman">여
-  		</div>
   	</div>
   </div>
   
@@ -183,7 +178,7 @@
 	<form action="/infra/durian/durianList" method="get">
 		<button class="btn btn-warning">목록</button>
 	</form>
-	<form action="/infra/durian/durianEdit" method="get">
+	<form action="/infra/durian/durianView" method="get">
 		<button class="btn btn-dark">수정</button>
 		</form>
 		

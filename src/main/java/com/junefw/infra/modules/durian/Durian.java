@@ -6,8 +6,38 @@ public class Durian {
 	private String ifmmId;
 	private String ifmmName;
 	private Integer ifmmDelNy;
+	
+	private String  ifmmDob;
+	private String  ifmmPassword;
+	private String  ifmmDesc;
+	private String  ifmmGender;
+	
 //------------
 	
+	public String getIfmmDesc() {
+		return ifmmDesc;
+	}
+	public void setIfmmDesc(String ifmmDesc) {
+		this.ifmmDesc = ifmmDesc;
+	}
+	public String getIfmmGender() {
+		return ifmmGender;
+	}
+	public void setIfmmGender(String ifmmGender) {
+		this.ifmmGender = ifmmGender;
+	}
+	public String getIfmmDob() {
+		return ifmmDob;
+	}
+	public void setIfmmDob(String ifmmDob) {
+		this.ifmmDob = ifmmDob;
+	}
+	public String getIfmmPassword() {
+		return ifmmPassword;
+	}
+	public void setIfmmPassword(String ifmmPassword) {
+		this.ifmmPassword = ifmmPassword;
+	}
 	public String getIfmmSeq() {
 		return ifmmSeq;
 	}

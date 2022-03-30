@@ -1,11 +1,16 @@
 package com.junefw.infra.modules.member;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MemberController {
@@ -22,6 +27,33 @@ public class MemberController {
 
 		return "member/memberList2";
 		
+	}
+	@ResponseBody
+	@RequestMapping(value = "/member/loginProc")
+	public Map<String, Object> loginProc(Member dto, HttpSession httpSession) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		
+		Member rtMember = service.selectOneLogin(dto);
+
+		if(rtMember != null) {
+
+
+			if(rtMember.getIfmmSeq() != null) {
+				
+				
+				returnMap.put("rt", "success");
+			} else {
+				returnMap.put("rt", "fail");
+			}
+		} else {
+			returnMap.put("rt", "fail");
+		}
+		return returnMap;
+	}
+	@RequestMapping(value = "/member/memberLogin")
+	public String memberLogin(Model model) throws Exception {
+
+		return "member/memberLogin";
 	}
 	
 	@RequestMapping(value = "/member/memberForm")

@@ -20,5 +20,10 @@ public class DurianServiceimple implements DurianService{
 	public int insert(Durian dto) throws Exception {
 		return dao.insert(dto); 
 	}
+
+	@Override
+	public Durian selectOne(DurianVo vo) throws Exception {
+		return dao.selectOne(vo);
+	}
 	
 }

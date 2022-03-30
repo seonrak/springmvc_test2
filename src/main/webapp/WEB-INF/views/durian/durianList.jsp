@@ -126,15 +126,13 @@
 			<tr class="table-dark">
 				<th scope="col"><input type="checkbox" id="" name="checkbox"
 					value="o" onclick="selectall"></th>
-				<th scope="col">#</th>
-				<th scope="col">Firstname</th>
-				<th scope="col">Lastname</th>
-				<th scope="col">age</th>
-				<th scope="col">City</th>
+				<th scope="col">번호</th>
+				<th scope="col">아이디</th>
+				<th scope="col">이름</th>
 				<th scope="col">Country</th>
 				<th scope="col">Sex</th>
-				<th scope="col">Example</th>
-				<th scope="col">Example</th>
+				
+			
 			</tr>
 		</thead>
 		<tbody>
@@ -151,11 +149,10 @@
                                                 <td scope="col"><c:out value="${item.ifmmSeq}"/></td>
                                                 <td scope="col"><a href="/infra/durian/durianView?ifmmSeq=${item.ifmmSeq}"><c:out value="${item.ifmmName}"/></a></td>                                      
                                                 <td scope="col"><c:out value="${item.ifmmId}"/></td>
-                                                <td scope="col">등급</td>
-                                                <td scope="col">상태</td>
-                                                <td scope="col">접속수</td>
-                                                <td scope="col">가입일</td>
-                                                <td scope="col">관리</td>
+                                                <td scope="col">광명시</td>
+                                                <td scope="col">남</td>
+                                         
+                                        
                                             </tr>
                                         </c:forEach>
                                     </c:otherwise>

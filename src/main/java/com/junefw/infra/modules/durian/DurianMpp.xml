@@ -28,4 +28,21 @@
 				,0
 			)
 	</insert>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+
+        SELECT
+            a.ifmmSeq
+            ,a.ifmmName
+            ,a.ifmmId
+            ,a.ifmmPassword
+            ,a.ifmmDesc
+            ,a.ifmmDob
+            ,(select ifcdName from infrCode where ifcdSeq = a.ifmmGenderCd) as ifmmGender
+       
+        FROM infrMember a
+            WHERE 1=1
+            AND a.ifmmSeq = #{ifmmSeq};
+
+    </select>
 </mapper>

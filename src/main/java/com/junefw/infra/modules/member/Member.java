@@ -5,11 +5,18 @@ public class Member {
 	private String ifmmSeq;
 	private String ifmmId;
 	private String ifmmName;
+	private String ifmmPassword;
 	private Integer ifmmDelNy;
 //------------
 	
 	public String getIfmmSeq() {
 		return ifmmSeq;
+	}
+	public String getIfmmPassword() {
+		return ifmmPassword;
+	}
+	public void setIfmmPassword(String ifmmPassword) {
+		this.ifmmPassword = ifmmPassword;
 	}
 	public void setIfmmSeq(String ifmmSeq) {
 		this.ifmmSeq = ifmmSeq;

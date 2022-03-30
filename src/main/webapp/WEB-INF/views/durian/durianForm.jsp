@@ -167,6 +167,17 @@
   		</div>
   	</div>
   </div>
+  
+  <form action="/infra/durian/durianList" method="get">
+		<button class="btn btn-warning">목록</button>
+	</form>
+	<form action="/infra/durian/durianList" method="get">
+		<button class="btn btn-dark">등록</button>
+		</form>
+			<form action="/infra/durian/durianView" method="get">
+	<button class="btn btn-red">취소</button>
+	</form>
+
 
   
   

@@ -35,6 +35,11 @@ public class DurianController {
 		
 		return "durian/durianForm";
 	}
+	@RequestMapping(value = "/durian/durianEdit")
+	public String durianEdit(Model model) throws Exception {
+		
+		return "durian/durianEdit";
+	}
 	
 	@RequestMapping(value = "/durian/durianInst")
 	public String memberInst(Model model, Durian dto) throws Exception {

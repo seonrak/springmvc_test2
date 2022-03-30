@@ -17,6 +17,19 @@
 				infrMember
 	</select>
 	
+	<select id="selectOneLogin" resultMap="resultMapObj">
+			select
+				a.ifmmSeq
+				,a.ifmmId
+				,a.ifmmName
+				,a.ifmmDesc
+			from
+				infrMember a
+			WHERE 1=1
+				AND a.ifmmId = #{ifmmId}
+				AND a.ifmmPassword = #{ifmmPassword}
+	</select>
+	
 		<insert id="insert">
 			insert into infrMember (
 				ifmmId

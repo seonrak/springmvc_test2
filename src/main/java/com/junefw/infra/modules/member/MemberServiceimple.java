@@ -21,4 +21,9 @@ public class MemberServiceimple implements MemberService{
 		return dao.insert(dto); 
 	}
 	
+	@Override
+	public Member selectOneLogin(Member dto) {
+		return dao.selectOneLogin(dto);
+	}
+	
 }
